@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import './Navbar.css';
+
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+      <nav className="navbar navbar-expand-sm navbar-dark  mb-4 nav-background">
         <div className="container">
           <Link className="navbar-brand" to="/">
             Project 3
@@ -24,6 +26,12 @@ class Navbar extends Component {
                   Members
               </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/webMidi">
+                  Midi Test Page
+              </Link>
+              </li>
+
 
             </ul>
           </div>
