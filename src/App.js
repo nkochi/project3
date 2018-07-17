@@ -25,7 +25,7 @@ class App extends Component {
             <Route path="/staff" exact={true} component={Staff} />
 
 
-            <Route path="/webMidi" exact={true} component={webMidi} />
+
           </div>
         </div>
 

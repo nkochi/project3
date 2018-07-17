@@ -17,7 +17,7 @@ export default class Home extends Component {
     return (
       <div className="jumbotron mainPortal">
         <div className="topContent">
-          <h1 className="display-6">Project 3 Portal</h1>
+          <h1 className="display-6">Mozart Mechanics</h1>
           <p>Officia aliquip cupidatat aliquip Lorem fugiat nostrud ad minim non adipisicing ullamco id laborum. Culpa nisi duis tempor do esse aute veniam occaecat aute sit sint nisi dolore quis. Dolore aliquip est officia aute nisi ea nulla ex do duis nisi ut duis. </p>
           <p>Commodo anim laboris ullamco culpa nisi in voluptate. Enim nisi incididunt quis do sunt in id excepteur Lorem ullamco ullamco. Excepteur do consequat qui elit elit eiusmod veniam consectetur veniam id.
           </p>
