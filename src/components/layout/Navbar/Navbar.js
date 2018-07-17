@@ -9,7 +9,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-sm navbar-dark  mb-4 nav-background">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            Project 3
+            Mozart Mechanics
         </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
