@@ -6,7 +6,9 @@ import Navbar from './components/layout/Navbar';
 
 import Home from './components/pages/Home';
 import Staff from './components/pages/Staff';
-import webMidi from './components/pages/webMidi';
+import SignUp from './components/pages/SignUp'
+//import webMidi from './components/pages/webMidi';
+import { withAuthenticator } from 'aws-amplify-react';
 
 import './App.css';
 import Amplify from 'aws-amplify';
@@ -17,11 +19,12 @@ Amplify.configure(aws_exports);
 class App extends Component {
   render() {
     return (
+
       <Router>
 
 
         <div className="App">
-
+          <SignUp />
           <Navbar />
           <div className="container">
             <Route path="/" exact={true} component={Home} />
@@ -37,4 +40,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuthenticator(App);
