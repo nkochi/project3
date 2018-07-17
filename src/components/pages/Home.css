@@ -6,22 +6,27 @@ body{
    
 }
 
-.mainPortal{
+.jumbotron{
    height:54rem;
    width: 100%;
    background-color: transparent;
    color:white;
+   padding: 0;
+    
     
  }
 
  .topContent{
-    
    height: 25%;
+     
+    margin-top: 0;
+
  }
 
  .mainContent{
-  margin-top: .25rem;
+  margin-top: 0;
   height: 75%;
+ 
   
  }
 
