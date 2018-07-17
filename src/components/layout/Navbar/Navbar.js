@@ -26,11 +26,7 @@ class Navbar extends Component {
                   Members
               </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/webMidi">
-                  Midi Test Page
-              </Link>
-              </li>
+
 
 
             </ul>
