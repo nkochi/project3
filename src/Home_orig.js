@@ -2,7 +2,6 @@ import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { Auth } from 'aws-amplify'
 import QRCode from 'qrcode.react'
-import './Home.css';
 
 class Home extends React.Component {
   state = {
@@ -23,7 +22,7 @@ class Home extends React.Component {
   }
   addTTOP = () => {
     Auth.setupTOTP(this.state.user).then((code) => {
-      const authCode = "otpauth://totp/AWSCognito:" + this.state.user.username + "?secret=" + code + "&issuer=AWSCognito";
+      const authCode = "otpauth://totp/AWSCognito:"+ this.state.user.username + "?secret=" + code + "&issuer=AWSCognito";
       this.setState({ qrCode: authCode })
     });
   }
@@ -36,35 +35,31 @@ class Home extends React.Component {
   }
   render() {
     return (
-
-
-      <div className="jumbotron mainPortal">
-        <div className="topContent">
-          <h1 className="display-6">Mozart Mechanics</h1>
-          <p>Officia aliquip cupidatat aliquip Lorem fugiat nostrud ad minim non adipisicing ullamco id laborum. Culpa nisi duis tempor do esse aute veniam occaecat aute sit sint nisi dolore quis. Dolore aliquip est officia aute nisi ea nulla ex do duis nisi ut duis. </p>
-          <p>Commodo anim laboris ullamco culpa nisi in voluptate. Enim nisi incididunt quis do sunt in id excepteur Lorem ullamco ullamco. Excepteur do consequat qui elit elit eiusmod veniam consectetur veniam id.
-          </p>
-        </div>
-        <div class="mainContent">
-
-          <ul class="set" id="keyboardLayout">
-            <li class="white b"></li>
-            <li class="black as"></li>
-            <li class="white a"></li>
-            <li class="black gs"></li>
-            <li class="white g"></li>
-            <li class="black fs"></li>
-            <li class="white f"></li>
-            <li class="white e"></li>
-            <li class="black ds"></li>
-            <li class="white d"></li>
-            <li class="black cs"></li>
-            <li class="white c"></li>
-          </ul>
-
-        </div>
-
-
+      <div>
+        <h1>Welcome {this.state.username}</h1>
+        <Link to='/route1' label='route1'>Route 1</Link><br /><br /><br />
+        <button onClick={this.addTTOP} style={{ border: '1px solid #ddd', width: 125 }}>
+          <p>Add TOTP</p>
+        </button>
+        {
+          (this.state.qrCode !== '') && (
+            <div>
+              <br />
+              <QRCode value={this.state.qrCode} />
+            </div>
+          )
+        }
+        <br /><br /><br />
+        <button onClick={() => this.setPreferredMFA('TOTP')} style={{ border: '1px solid #ddd', width: 125 }}>
+          <p>Prefer TOTP</p>
+        </button>
+        <br /><br />
+        <button onClick={() => this.setPreferredMFA('SMS')} style={{ border: '1px solid #ddd', width: 125 }}>
+          <p>Prefer SMS</p>
+        </button>
+        <br /><br /><br />
+        <input placeholder='TOTP Code' onChange={e => this.setState({ challengeAnswer: e.target.value })} style={{ border: '1px solid #ddd', height: 35 }} />
+       
       </div>
     )
   }

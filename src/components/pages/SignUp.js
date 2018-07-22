@@ -27,6 +27,8 @@ class SignUp extends React.Component {
       .catch(err => console.log('error signing up: ', err))
   }
   confirmSignUp = () => {
+    console.log("user name  =", this.state.username);
+    console.log("auth code  =", this.state.authCode);
     Auth.confirmSignUp(this.state.username, this.state.authCode)
       .then(console.log('successful confirm sign up!'))
       .catch(err => console.log('error confirming signing up: ', err))
@@ -79,7 +81,8 @@ let styles = {
   container: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'black'
   },
   button: {
     width: '170px',
